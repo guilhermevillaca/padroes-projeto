@@ -4,16 +4,18 @@ package br.com.guilhermevillaca.padroes.estruturais.composite;
  *
  * @author villaca
  */
-public class Arquivo implements Componente {
+public class Funcionario implements Empregado {
 
     private String nome;
+    private String cargo;
 
-    public Arquivo(String nome) {
+    public Funcionario(String nome, String cargo) {
         this.nome = nome;
+        this.cargo = cargo;
     }
 
     @Override
     public void mostrarDetalhes() {
-        System.out.println("Arquivo: " + nome);
+        System.out.println(nome + " - " + cargo);
     }
 }
