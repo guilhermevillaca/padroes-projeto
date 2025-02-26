@@ -1,11 +1,7 @@
 package br.com.guilhermevillaca.padroes.estruturais.decorator;
 
-/**
- *
- * @author villaca
- */
+// 🎨 Decorador abstrato para ingredientes adicionais
 public abstract class CafeDecorator implements Cafe {
-
     protected Cafe cafe;
 
     public CafeDecorator(Cafe cafe) {
@@ -13,12 +9,12 @@ public abstract class CafeDecorator implements Cafe {
     }
 
     @Override
-    public String getDescricao() {
-        return cafe.getDescricao();
+    public double getPreco() {
+        return cafe.getPreco();
     }
 
     @Override
-    public double getCusto() {
-        return cafe.getCusto();
+    public String getDescricao() {
+        return cafe.getDescricao();
     }
 }

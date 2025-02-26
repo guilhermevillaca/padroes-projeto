@@ -1,18 +1,18 @@
 package br.com.guilhermevillaca.padroes.estruturais.decorator;
 
-// 🥛 Decorador para leite
-public class Leite extends CafeDecorator {
-    public Leite(Cafe cafe) {
+// ☕ Decorador para Capuccino
+public class Capuccino extends CafeDecorator {
+    public Capuccino(Cafe cafe) {
         super(cafe);
     }
 
     @Override
     public double getPreco() {
-        return super.getPreco() + 2.00;
+        return super.getPreco() + 4.00;
     }
 
     @Override
     public String getDescricao() {
-        return super.getDescricao() + " com leite";
+        return "Capuccino";
     }
 }

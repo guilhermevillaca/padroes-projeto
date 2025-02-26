@@ -1,11 +1,7 @@
-package br.com.guilhermevillaca.padroes.estruturais.decorator;
+package br.com.guilhermevillaca.antipadroes.estruturais.decorator;
 
-// 🥛 Decorador para leite
-public class Leite extends CafeDecorator {
-    public Leite(Cafe cafe) {
-        super(cafe);
-    }
-
+// ☕ Café com leite
+public class CafeComLeite extends Cafe {
     @Override
     public double getPreco() {
         return super.getPreco() + 2.00;

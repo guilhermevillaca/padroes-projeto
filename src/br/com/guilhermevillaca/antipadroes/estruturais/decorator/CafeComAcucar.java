@@ -1,11 +1,7 @@
-package br.com.guilhermevillaca.padroes.estruturais.decorator;
+package br.com.guilhermevillaca.antipadroes.estruturais.decorator;
 
-// 🍬 Decorador para açúcar
-public class Acucar extends CafeDecorator {
-    public Acucar(Cafe cafe) {
-        super(cafe);
-    }
-
+// ☕ Café com açúcar
+public class CafeComAcucar extends Cafe {
     @Override
     public double getPreco() {
         return super.getPreco() + 1.00;
