@@ -13,35 +13,37 @@ package br.com.guilhermevillaca.padroes.estruturais.bridge;
  * padrão Bridge para permitir que novos dispositivos e controles remotos possam
  * ser adicionados facilmente.
  * 
- * Explicação Dispositivo: Interface que define as operações básicas para
- * qualquer dispositivo. TV e Rádio: Implementações concretas da interface
- * Dispositivo. ControleRemoto: Classe abstrata que utiliza um Dispositivo.
- * Define métodos abstratos que devem ser implementados pelas subclasses.
- * ControleRemotoBasico: Implementação do controle remoto que pode
- * ligar/desligar e ajustar o volume. ControleRemotoAvancado: Implementação
- * avançada do controle remoto que pode silenciar o dispositivo, além das
- * funcionalidades básicas. Main: Classe principal que demonstra o uso dos
- * controles remotos com uma TV. O padrão Bridge permite adicionar novos
- * dispositivos ou controles remotos sem alterar o código existente,
- * proporcionando maior flexibilidade e escalabilidade ao sistema.
+ * Benefícios do Padrão Bridge
+✔ Separa as hierarquias de dispositivos e controles → Podemos adicionar novos dispositivos ou novos controles sem precisar criar várias subclasses.
+✔ Código reutilizável → Qualquer controle pode ser usado com qualquer dispositivo.
+✔ Facilidade de manutenção → Se quisermos adicionar um novo tipo de controle (ex: Controle por App), basta criar uma nova classe sem mexer nos dispositivos.
  */
 public class Principal {
 
     public static void main(String[] args) {
+        // Criamos uma TV e um Rádio
         Dispositivo tv = new Televisao();
-        ControleRemoto controleBasico = new ControleRemotoBasico(tv);
-        ControleRemoto controleAvancado = new ControleRemotoAvancado(tv);
+        Dispositivo radio = new Radio();
+        Dispositivo projetor = new Projetor(); // Novo dispositivo
 
-        System.out.println("Usando Controle Remoto Básico:");
-        controleBasico.ligarDesligar();
-        controleBasico.aumentarVolume();
-        controleBasico.diminuirVolume();
-        controleBasico.ligarDesligar();
 
-        System.out.println("\nUsando Controle Remoto Avançado:");
-        controleAvancado.ligarDesligar();
-        controleAvancado.aumentarVolume();
-        controleAvancado.silenciar();        
-        controleAvancado.ligarDesligar();
+        // Criamos controles remotos diferentes para os dispositivos
+        ControleRemoto controleBasicoTV = new ControleRemotoBasico(tv);
+        ControleRemoto controleAvancadoRadio = new ControleRemotoAvancado(radio);
+        ControleRemoto controleAvancadoProjetor = new ControleRemotoAvancado(projetor); // Novo controle para projetor
+
+
+        // Usamos os controles nos dispositivos
+        controleBasicoTV.ligar();
+        controleBasicoTV.aumentarVolume();
+
+        controleAvancadoRadio.ligar();
+        controleAvancadoRadio.aumentarVolume();
+        ((ControleRemotoAvancado) controleAvancadoRadio).silenciar(); // Método avançado
+
+        controleAvancadoProjetor.ligar();
+        controleAvancadoProjetor.aumentarVolume();
+        ((Projetor) projetor).mudarFonte("HDMI"); // Método específico do projetor
+
     }
 }

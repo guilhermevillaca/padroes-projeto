@@ -12,12 +12,16 @@ public abstract class ControleRemoto {
         this.dispositivo = dispositivo;
     }
 
-    public abstract void ligarDesligar();
+    public void ligar() {
+        dispositivo.ligar();
+    }
 
-    public abstract void aumentarVolume();
+    public void desligar() {
+        dispositivo.desligar();
+    }
 
-    public abstract void diminuirVolume();
-    
-    public abstract void silenciar();
+    public void aumentarVolume() {
+        dispositivo.aumentarVolume();
+    }
 
 }

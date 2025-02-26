@@ -1,24 +1,16 @@
-package br.com.guilhermevillaca.padroes.estruturais.bridge;
+package br.com.guilhermevillaca.antipadroes.estruturais.bridge;
 
-/**
- *
- * @author villaca
- */
-public class Televisao implements Dispositivo {
-
-    @Override
+// 📺 Classe TV com controle básico
+public class TVComControleBasico {
     public void ligar() {
         System.out.println("TV ligada");
     }
 
-    @Override
     public void desligar() {
         System.out.println("TV desligada");
     }
 
-    @Override
     public void aumentarVolume() {
         System.out.println("Volume da TV aumentado");
     }
-
 }
