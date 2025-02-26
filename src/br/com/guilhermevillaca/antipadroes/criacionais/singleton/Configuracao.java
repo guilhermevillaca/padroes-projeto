@@ -1,3 +1,4 @@
+package br.com.guilhermevillaca.antipadroes.criacionais.singleton;
 class Configuracao {
     public static Configuracao instanciaGlobal = new Configuracao(); // Variável global
     

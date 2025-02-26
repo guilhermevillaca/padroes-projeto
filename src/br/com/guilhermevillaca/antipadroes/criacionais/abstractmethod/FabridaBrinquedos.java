@@ -1,3 +1,4 @@
+package br.com.guilhermevillaca.antipadroes.criacionais.abstractmethod;
 // Fábrica única sem Abstract Factory
 class FabricaBrinquedos {
     public Object criarBrinquedo(String tipo, String material) {

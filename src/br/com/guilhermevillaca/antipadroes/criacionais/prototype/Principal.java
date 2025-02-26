@@ -1,4 +1,4 @@
-package br.com.guilhermevillaca.antipadroes.prototype;
+package br.com.guilhermevillaca.antipadroes.criacionais.prototype;
 
 public class Principal {
     public static void main(String[] args) {

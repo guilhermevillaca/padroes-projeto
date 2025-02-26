@@ -1,3 +1,4 @@
+package br.com.guilhermevillaca.antipadroes.criacionais.abstractmethod;
 // Uso da fábrica
 public class Principal {
     public static void main(String[] args) {

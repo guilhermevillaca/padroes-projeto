@@ -38,12 +38,14 @@ antiga sem mudanças significativas.
 **/
 
 public class Principal {
-
+    
     public static void main(String[] args) {
-        SistemaPagamentoAntigo sistemaPagamentoAntigo = new SistemaPagamentoAntigo();
-        SistemaPagamentoNovo sistemaPagamentoNovo = new AdaptadorPagamento(sistemaPagamentoAntigo);
+        // Usando o sistema antigo com o Adapter
+        SistemaDePagamento sistema1 = new SistemaDePagamento(new PagamentoAntigoAdapter());
+        sistema1.realizarPagamento(100.00);
 
-        // Usando a nova interface para processar o pagamento
-        sistemaPagamentoNovo.processarPagamento("12345", 250.75);
+        // Usando o sistema novo diretamente
+        SistemaDePagamento sistema2 = new SistemaDePagamento(new PagamentoNovoAdapter());
+        sistema2.realizarPagamento(200.00);
     }
 }

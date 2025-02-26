@@ -1,4 +1,4 @@
-package br.com.guilhermevillaca.antipadroes.factorymethod;
+package br.com.guilhermevillaca.antipadroes.criacionais.factorymethod;
 
 // Implementação específica para transporte ferroviário
 class Trem extends Transporte {
