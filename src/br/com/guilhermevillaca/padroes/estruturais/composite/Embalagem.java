@@ -18,7 +18,13 @@ public class Embalagem implements Item {
 
     @Override
     public double getPreco() {
-        return itens.stream().mapToDouble(Item::getPreco).sum();
+        //return itens.stream().mapToDouble(Item::getPreco).sum();
+
+        double total = 0;
+        for (Item item : itens) {
+            total += item.getPreco();
+        }
+        return total;
     }
 
     @Override
