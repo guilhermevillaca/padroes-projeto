@@ -1,26 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package br.com.guilhermevillaca.padroes.comportamentais.interpreter;
 
-/**
- *
- * @author villaca
- *
- * Explicação: Contexto: Mantém o estado atual, como a direção em que o
- * personagem está apontando. Expressões Concretas: AndarParaFrente,
- * VirarParaEsquerda, e VirarParaDireita definem como interpretar as letras A,
- * B, e C. Interpretador: Recebe uma string de comandos e a interpreta,
- * aplicando cada comando à sua respectiva expressão. Este exemplo do padrão
- * Interpreter ilustra como transformar uma sequência de comandos em ações, com
- * o interpretador navegando pela string e executando as ações correspondentes.
+/*
+ * ✅ Benefícios do Interpreter
+✅ Código aberto para expansão: Podemos adicionar novos operadores (*, /) sem modificar código existente.
+✅ Fácil manutenção: Cada expressão (Número, Soma, Subtração) é uma classe independente.
+✅ Flexibilidade: Podemos combinar expressões para interpretar frases mais complexas no futuro.
+✅ Organização clara: O código está bem estruturado e segue os princípios da programação orientada a objetos.
+
+Agora nosso código está limpo, expansível e pronto para novas expressões! 🚀
  */
 public class Principal {
 
     public static void main(String[] args) {
-        String codigoSecreto = "AABCA";
-        Interpreter tradutor = new Interpreter();
-        tradutor.interpretar(codigoSecreto);
+        Expressao expressao1 = Interpretador.construirExpressao("10 + 5");
+        System.out.println(expressao1.interpretar()); // 15
+
+        Expressao expressao2 = Interpretador.construirExpressao("20 - 8");
+        System.out.println(expressao2.interpretar()); // 12
     }
+
 }
